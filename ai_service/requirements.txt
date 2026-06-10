@@ -1,0 +1,6 @@
+boto3==1.43.24
+fastapi==0.136.3
+pydantic==2.13.4
+transformers==5.10.2
+uvicorn
+torch --index-url https://download.pytorch.org/whl/cpu

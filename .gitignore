@@ -1,0 +1,14 @@
+# Credentials and sensitive notes
+AWS Keys.txt
+*.pem
+.env
+
+# Java build artifacts
+target/
+*.class
+
+# Python environments and caches
+__pycache__/
+*.pyc
+venv/
+.venv/

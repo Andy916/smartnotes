@@ -1,0 +1,24 @@
+services:
+  # ☕ Our Spring Boot Backend Service
+  java_backend:
+    build: ./java_backend           # <--- TELLS DOCKER WHERE THE SOURCE CODE LIVES
+    image: smartnotes-backend
+    container_name: smartnotes-backend-app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - AI_SERVICE_URL=http://smartnotes-ai-app:8000/summarize
+    depends_on:
+      - ai_service
+
+  # 🐳 Our FastAPI Python AI Service
+  ai_service:
+    build: ./ai_service             # <--- TELLS DOCKER WHERE THE SOURCE CODE LIVES
+    image: smartnotes-ai
+    container_name: smartnotes-ai-app
+    ports:
+      - "8000:8000"
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
