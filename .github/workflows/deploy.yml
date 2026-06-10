@@ -38,5 +38,6 @@ jobs:
           export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           
           # 5. Stop any old instances running and boot up the fresh cloud images
+          cd ~/smartnotes
           sudo docker-compose down || true
           sudo docker-compose up -d
