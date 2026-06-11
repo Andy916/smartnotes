@@ -1,8 +1,7 @@
 services:
   # ☕ Our Spring Boot Backend Service
   java_backend:
-    build: ./java_backend           # <--- TELLS DOCKER WHERE THE SOURCE CODE LIVES
-    image: smartnotes-backend
+    image: andyhatt/smartnotes-backend:latest     # <--- UPDATED TO DOCKER HUB IMAGE
     container_name: smartnotes-backend-app
     ports:
       - "8080:8080"
@@ -14,8 +13,7 @@ services:
 
   # 🐳 Our FastAPI Python AI Service
   ai_service:
-    build: ./ai_service             # <--- TELLS DOCKER WHERE THE SOURCE CODE LIVES
-    image: smartnotes-ai
+    image: andyhatt/smartnotes-ai:latest          # <--- UPDATED TO DOCKER HUB IMAGE
     container_name: smartnotes-ai-app
     ports:
       - "8000:8000"
